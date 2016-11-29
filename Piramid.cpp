@@ -1,11 +1,12 @@
 #include <iostream>
+#include <conio.h>
 
 using namespace std;
 
 void build_ziggurat(int** Ziggurat, int counter, int lenght) {
 	int pos = 0;
 	int number = lenght;
-	for (int i = 1; i < counter+1; i++) {
+	for (int i = 0; i < counter; i++) {
 		for (int j = pos; j < number; j++) {				//fill upper and down stage
 			Ziggurat[pos][j] = i;
 			Ziggurat[lenght - pos - 1][j] = i;
@@ -25,7 +26,8 @@ void build_ziggurat(int** Ziggurat, int counter, int lenght) {
 	}
 }
 
-int main() {      n
+int main() {
+	setlocale(0, "Russian");
 	int lenght = 5;
 	int counter;
 	cin >> lenght;
@@ -37,6 +39,6 @@ int main() {      n
 	build_ziggurat(Ziggurat, counter, lenght);
 
 
+	system("pause");
 	return 0;
 }
-
